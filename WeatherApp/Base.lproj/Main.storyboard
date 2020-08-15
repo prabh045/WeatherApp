@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eMr-po-CkN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather App-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JdR-Ch-PgE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1Fl-D4-jfs" appends="YES" id="Xeh-BW-icH"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JdR-Ch-PgE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3QE-Hm-SRZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JdR-Ch-PgE" secondAttribute="trailing" id="6y9-TT-odH"/>
+                            <constraint firstItem="JdR-Ch-PgE" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Gar-1d-dT2"/>
+                            <constraint firstItem="JdR-Ch-PgE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dxx-ay-3EA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather App" id="Sar-TS-QEJ"/>
+                    <connections>
+                        <outlet property="mapView" destination="JdR-Ch-PgE" id="BjF-6t-OIg"/>
+                        <segue destination="g2f-qg-Bvh" kind="show" identifier="showWeather" id="xnx-sM-txw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1Fl-D4-jfs">
+                    <connections>
+                        <action selector="mapTapGesture:" destination="BYZ-38-t0r" id="fqQ-t4-RdX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-377" y="-1"/>
+        </scene>
+        <!--Weather Detail View Controller-->
+        <scene sceneID="3sA-Tk-jLS">
+            <objects>
+                <viewController id="g2f-qg-Bvh" customClass="WeatherDetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mgZ-al-122">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud_small" translatesAutoresizingMaskIntoConstraints="NO" id="CM2-YM-sdb">
+                                <rect key="frame" x="57" y="108" width="300" height="196.5"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaG-js-m8n" userLabel="Text Container">
+                                <rect key="frame" x="0.0" y="324.5" width="414" height="571.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cupertino" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T4r-kP-Iix">
+                                        <rect key="frame" x="0.0" y="10" width="414" height="95.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="150"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28°F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZBV-RP-tBz">
+                                        <rect key="frame" x="0.0" y="442" width="414" height="119.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="250"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2156862745" green="0.50196078430000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZBV-RP-tBz" secondAttribute="bottom" constant="10" id="DeV-Hn-AcO"/>
+                                    <constraint firstItem="T4r-kP-Iix" firstAttribute="top" secondItem="MaG-js-m8n" secondAttribute="top" constant="10" id="MSy-X6-rA5"/>
+                                    <constraint firstItem="ZBV-RP-tBz" firstAttribute="centerX" secondItem="MaG-js-m8n" secondAttribute="centerX" id="Zfh-ho-d7o"/>
+                                    <constraint firstItem="T4r-kP-Iix" firstAttribute="centerX" secondItem="MaG-js-m8n" secondAttribute="centerX" id="nMn-yg-wnV"/>
+                                    <constraint firstItem="ZBV-RP-tBz" firstAttribute="width" secondItem="MaG-js-m8n" secondAttribute="width" id="qdb-Hq-W7D"/>
+                                    <constraint firstItem="T4r-kP-Iix" firstAttribute="width" secondItem="MaG-js-m8n" secondAttribute="width" id="xus-n6-OxQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CM2-YM-sdb" firstAttribute="height" relation="lessThanOrEqual" secondItem="k5t-hw-6Yh" secondAttribute="height" multiplier="0.4" id="4X2-Ve-cyO"/>
+                            <constraint firstAttribute="trailing" secondItem="MaG-js-m8n" secondAttribute="trailing" id="4su-w1-sH5"/>
+                            <constraint firstItem="MaG-js-m8n" firstAttribute="width" secondItem="mgZ-al-122" secondAttribute="width" multiplier="0.5" id="8PI-Yc-uu9"/>
+                            <constraint firstItem="MaG-js-m8n" firstAttribute="top" secondItem="k5t-hw-6Yh" secondAttribute="top" constant="278.5" id="9BJ-Hy-yDt">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="CM2-YM-sdb" firstAttribute="centerX" secondItem="mgZ-al-122" secondAttribute="centerX" id="FMP-oN-wSC"/>
+                            <constraint firstItem="CM2-YM-sdb" firstAttribute="centerY" secondItem="mgZ-al-122" secondAttribute="centerY" id="Gdr-xF-wx8"/>
+                            <constraint firstAttribute="bottom" secondItem="MaG-js-m8n" secondAttribute="bottom" id="H6K-oC-507"/>
+                            <constraint firstItem="MaG-js-m8n" firstAttribute="leading" secondItem="k5t-hw-6Yh" secondAttribute="leading" id="JVc-Yo-9g7"/>
+                            <constraint firstItem="MaG-js-m8n" firstAttribute="top" secondItem="CM2-YM-sdb" secondAttribute="bottom" constant="20" id="hE6-cE-IrS">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="CM2-YM-sdb" firstAttribute="leading" secondItem="k5t-hw-6Yh" secondAttribute="leading" constant="10" id="iUt-wZ-Fgu"/>
+                            <constraint firstItem="CM2-YM-sdb" firstAttribute="top" secondItem="k5t-hw-6Yh" secondAttribute="top" constant="20" id="ljP-CV-nkc"/>
+                            <constraint firstItem="CM2-YM-sdb" firstAttribute="width" secondItem="k5t-hw-6Yh" secondAttribute="width" multiplier="0.45" id="uW4-IE-gOm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k5t-hw-6Yh"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Gdr-xF-wx8"/>
+                                <exclude reference="iUt-wZ-Fgu"/>
+                                <exclude reference="uW4-IE-gOm"/>
+                                <exclude reference="8PI-Yc-uu9"/>
+                                <exclude reference="9BJ-Hy-yDt"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="4X2-Ve-cyO"/>
+                                <exclude reference="FMP-oN-wSC"/>
+                                <include reference="Gdr-xF-wx8"/>
+                                <include reference="iUt-wZ-Fgu"/>
+                                <exclude reference="ljP-CV-nkc"/>
+                                <include reference="uW4-IE-gOm"/>
+                                <include reference="8PI-Yc-uu9"/>
+                                <include reference="9BJ-Hy-yDt"/>
+                                <exclude reference="JVc-Yo-9g7"/>
+                                <exclude reference="hE6-cE-IrS"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="ie1-6X-cDx"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="T4r-kP-Iix" id="fIZ-EX-7ZR"/>
+                        <outlet property="cityTemperatureLabel" destination="ZBV-RP-tBz" id="Jw5-SI-BzN"/>
+                        <outlet property="weatherImageView" destination="CM2-YM-sdb" id="WUY-N2-GJA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ShC-Re-Ifb" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="-1"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nrn-bR-Jzz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eMr-po-CkN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Scl-MZ-leV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6Ou-n8-sBe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6hJ-8v-sGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1143.4782608695652" y="-1.3392857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloud_small" width="300" height="196.5"/>
+    </resources>
+</document>
